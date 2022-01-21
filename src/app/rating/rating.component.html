@@ -1,0 +1,6 @@
+<div class="rating">
+        <span *ngFor="let star_count of starArray;">
+                <span class="fa fa-star" (mouseenter)="onMouseEnter(star_count+1)" (click)="rate(star_count +1)"
+                        [ngClass]="{'checked': star_count < rating }"> </span>
+        </span>
+</div>

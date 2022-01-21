@@ -1,0 +1,54 @@
+<div class="container">
+
+
+    <!-- <div class="input-group">
+        <div class="form-outline">
+            <input type="search" id="form1" class="form-control" />
+            <label class="form-label" for="form1" #inputRef>Search</label>
+        </div>
+        <button type="button" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+        </button>
+    </div> -->
+
+
+
+    <div class="main">
+        <div class="row">
+            <div class="col-md-3 col-lg-3" *ngFor="let movie of poupularMovies?.results">
+                <div class="card" style="width: 12rem;">
+                    <div class="inner-card">
+                        <img class="card-img-top img" src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"
+                            alt="Card image cap">
+                        <div class="overlay"></div>
+
+                        <div class="button" (click)="addToWatchList(movie)"> <i class="bi bi-heart"
+                                style="color:white"></i>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{movie?.original_title}}</h5>
+                        <div class="review-component">
+                            <sk-rating [stars]="stars" color="color" rating="'4'"
+                                (getRating)="getRating($event, movie)"> test
+                            </sk-rating>
+
+                            <!-- <app-review (rating)="getRating($event)"></app-review> -->
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

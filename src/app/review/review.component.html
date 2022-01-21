@@ -1,0 +1,22 @@
+<form [formGroup]="form" (keydown.enter)="$event.preventDefault()">
+  <ul class="review__ratings" formGroupName="ratings" (click)="onSubmit()">
+    <li class="review__rating" *ngFor="let subject of ratingSubjects; index as subjectIndex;">
+      <ng-container *ngFor="let radio of [0,1,2,3,4,5] index as i;">
+        <input type="radio" [name]="subject.name" [id]="[subject.name + '-stars-' + i]" [formControlName]="subject.name"
+          [value]="[radio]" />
+      </ng-container>
+
+      <section class="review__stars">
+        <ng-container *ngFor="let star of [0,1,2,3,4,5]; index as i;">
+          <label [ngClass]="{'review__rating__clear': i === 0}" [for]="[subject.name + '-stars-' + i]">
+
+            <svg *ngIf="i !== 0" class="review__star" width="255" height="240" viewBox="0 0 51 48">
+              <path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" />
+            </svg>
+          </label>
+        </ng-container>
+      </section>
+    </li>
+  </ul>
+
+</form>

@@ -1,0 +1,37 @@
+<div class="container">
+
+    <div class="main">
+        <div class="row">
+            <div class="col-md-3 col-lg-3" *ngFor="let movie of watchList">
+                <div class="card" style="width: 12rem;">
+                    <div class="inner-card">
+                        <img class="card-img-top img" src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"
+                            alt="Card image cap">
+                        <!-- <div class="overlay"></div> -->
+
+
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{movie?.original_title}}</h5>
+                        <div class="review-component">
+
+
+                            <!-- <app-review (rating)="getRating($event)"></app-review> -->
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

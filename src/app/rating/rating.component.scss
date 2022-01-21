@@ -1,0 +1,11 @@
+.checked {
+  color: orange;
+}
+span {
+  padding: 2px;;
+  font-size: larger;
+}
+span:hover {
+  color:orange;
+  transition: 0.2s;
+}
