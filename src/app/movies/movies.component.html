@@ -1,21 +1,19 @@
 <div class="container">
 
 
-    <!-- <div class="input-group">
-        <div class="form-outline">
-            <input type="search" id="form1" class="form-control" />
-            <label class="form-label" for="form1" #inputRef>Search</label>
+    <div class="input-group">
+        <div class="form-outline search-bar">
+            <input placeholder="Search Movie" type="search" id="form1" (ngModelChange)="searchMovie()"
+                class="form-control" [(ngModel)]="searchRef" name="searchRef" />
+            <label class="form-label" for="form1">Search</label>
         </div>
-        <button type="button" class="btn btn-primary">
-            <i class="fas fa-search"></i>
-        </button>
-    </div> -->
+    </div>
 
 
 
     <div class="main">
         <div class="row">
-            <div class="col-md-3 col-lg-3" *ngFor="let movie of poupularMovies?.results">
+            <div class="col-md-3 col-lg-3" *ngFor="let movie of filteredMovies">
                 <div class="card" style="width: 12rem;">
                     <div class="inner-card">
                         <img class="card-img-top img" src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"

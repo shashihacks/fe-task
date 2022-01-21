@@ -11,6 +11,8 @@ export class MoviesComponent implements OnInit {
   poupularMovies: any
   movie: any
   stars = 5
+  searchRef: any
+  filteredMovies: any
 
 
   //   {
@@ -40,7 +42,9 @@ export class MoviesComponent implements OnInit {
   ngOnInit(): void {
     this.movieService.getPoupularMovies().subscribe(movies => {
       this.poupularMovies = movies
-      console.log(this.poupularMovies)
+      // console.log(this.poupularMovies)
+
+      this.filteredMovies = this.poupularMovies.results
     })
 
 
@@ -59,6 +63,16 @@ export class MoviesComponent implements OnInit {
       movie['rating'] = e
     }
     console.log(this.poupularMovies)
+  }
+
+  searchMovie() {
+    console.log(this.poupularMovies)
+    if (this.searchRef) {
+      return this.filteredMovies = this.poupularMovies.results.filter((m: any) => m.original_title.toLowerCase().includes(this.searchRef.toLowerCase()))
+    }
+
+    this.filteredMovies = this.poupularMovies.results
+    console.log(this.filteredMovies)
   }
 
 }
