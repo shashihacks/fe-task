@@ -13,7 +13,7 @@
 
     <div class="main">
         <div class="row">
-            <div class="col-md-3 col-lg-3" *ngFor="let movie of filteredMovies">
+            <div class="col-md-3 col-lg-3" *ngFor="let movie of filteredMovies ;let i = index">
                 <div class="card" style="width: 12rem;">
                     <div class="inner-card">
                         <img class="card-img-top img" src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"
@@ -31,16 +31,8 @@
                             <sk-rating [stars]="stars" color="color" rating="'4'"
                                 (getRating)="getRating($event, movie)"> test
                             </sk-rating>
-
-                            <!-- <app-review (rating)="getRating($event)"></app-review> -->
                         </div>
-
-
-
                     </div>
-
-
-
 
                 </div>
             </div>
